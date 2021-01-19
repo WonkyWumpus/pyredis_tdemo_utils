@@ -1,0 +1,24 @@
+# zset-and-hash.yaml
+redisConn:
+  host: 'redis-12000.re01.tdemo.org'
+  port: '12000'
+  password: '' #'88pLug##44#'
+  clusterMode: 'false'
+hash:
+  keyPrefix: 'zRunHash:'
+  keyStart: 1
+  numKeys: 1000
+  keyNameLength: 13
+  numElements: 100
+  elementStart: 1
+  elementNameLength: 13
+  elementValueLength: 100
+zset:
+  keyPrefix: 'zRunSort:'
+  numKeys: 1 #1
+  keyNameLength: 6
+  scoreLength: 7
+query:
+  runTimeSecs: 10
+  readWriteRatio: '100:1' #Not implemented yet
+opsPerSec: 500
