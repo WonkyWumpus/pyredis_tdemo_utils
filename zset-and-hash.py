@@ -136,7 +136,7 @@ def launchWorkers():
         subargs.append(args.mode)
 
         print(args.clientName + ": Launching client:", subargs, flush=True)
-        myClients.append(subprocess.Popen(subargs, bufsize=0, stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding='utf-8', universal_newlines=True))
+        myClients.append(subprocess.Popen(subargs, bufsize=0, stdout=subprocess.PIPE, stderr=sys.stderr, encoding='utf-8', universal_newlines=True))
         remainingClients = remainingClients - 1
         remainingKeys = remainingKeys - numKeysForClient
         currentKeyStart = currentKeyStart + numKeysForClient

@@ -1,0 +1,10 @@
+python3 ./del-range.py -s redis-12000.re01.tdemo.org -p 12000 --keyPrefix="zRunHash:" --startKey=95000001 --num=1000000 --keyNameLength=25 &
+python3 ./del-range.py -s redis-12000.re01.tdemo.org -p 12000 --keyPrefix="zRunHash:" --startKey=96000001 --num=1000000 --keyNameLength=25 &
+python3 ./del-range.py -s redis-12000.re01.tdemo.org -p 12000 --keyPrefix="zRunHash:" --startKey=97000001 --num=1000000 --keyNameLength=25 &
+python3 ./del-range.py -s redis-12000.re01.tdemo.org -p 12000 --keyPrefix="zRunHash:" --startKey=98000001 --num=1000000 --keyNameLength=25 &
+python3 ./del-range.py -s redis-12000.re01.tdemo.org -p 12000 --keyPrefix="zRunHash:" --startKey=99000001 --num=1000000 --keyNameLength=25 &
+python3 ./del-range.py -s redis-12000.re01.tdemo.org -p 12000 --keyPrefix="zRunHash:" --startKey=100000001 --num=1000000 --keyNameLength=25 &
+python3 ./del-range.py -s redis-12000.re01.tdemo.org -p 12000 --keyPrefix="zRunHash:" --startKey=101000001 --num=1000000 --keyNameLength=25 &
+python3 ./del-range.py -s redis-12000.re01.tdemo.org -p 12000 --keyPrefix="zRunHash:" --startKey=102000001 --num=1000000 --keyNameLength=25 &
+python3 ./del-range.py -s redis-12000.re01.tdemo.org -p 12000 --keyPrefix="zRunHash:" --startKey=1035000001 --num=1000000 --keyNameLength=25 &
+python3 ./del-range.py -s redis-12000.re01.tdemo.org -p 12000 --keyPrefix="zRunHash:" --startKey=1045000001 --num=1000000 --keyNameLength=25 &
