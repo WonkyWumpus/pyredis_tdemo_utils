@@ -10,4 +10,5 @@ Look at simple-set-get.py for easy example, zset-and-hash.py is much more involv
 Requires pyRedis 3, not compatible with pyRedis 4
 
 pip3 install redis==3.5.3
+
 pip3 install pyyaml
