@@ -32,7 +32,8 @@ def wrapper(method):
 
         re_met_trans_id = None
         new_kwrds = {}
-        if (method.__name__ not in ['execute_command', 'parse_response', '__init__', '__del__'] and (kwrds is not None)):
+#        if (method.__name__ not in ['execute_command', 'parse_response', '__init__', '__del__'] and (kwrds is not None)):
+        if (method.__name__ not in ['parse_response', '__init__', '__del__'] and (kwrds is not None)):
             # print('Custom Logic: ' + method.__name__)
             new_kwrds = {}
             for key, value in kwrds.items():
@@ -57,7 +58,7 @@ def wrapper(method):
                     except ConnectionError:
                         print(ConnectionError)
                     except Exception as e:
-                        print("Some other exception")
+                        print("Some other exception: " + e)
                     print("RETRY")
                     sleep(i)
             else:

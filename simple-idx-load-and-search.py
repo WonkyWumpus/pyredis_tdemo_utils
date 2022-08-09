@@ -38,13 +38,18 @@ if __name__ == "__main__":
     # Initialize/name the transactions that you will be calling
     #   Please not, if you are using the trans_per_sec option to throttle you calls, you should only
     #   throttle ONE transaction in your loop
-    rc.re_met_init_trans(trans_id='SET-01', histo_list=default_histo_list, retry_list=default_retry_list)
-    rc.re_met_init_trans(trans_id='GET-01', histo_list=default_histo_list, retry_list=default_retry_list, trans_per_sec=args.rate)
+    rc.re_met_init_trans(trans_id='DELETE-IDX-01', histo_list=default_histo_list, retry_list=default_retry_list)
+    rc.re_met_init_trans(trans_id='CREATE-IDX-01', histo_list=default_histo_list, retry_list=default_retry_list, trans_per_sec=args.rate)
+    rc.re_met_init_trans(trans_id='INSERT-JSON-01', histo_list=default_histo_list, retry_list=default_retry_list)
+    rc.re_met_init_trans(trans_id='SEARCH-IDX-01', histo_list=default_histo_list, retry_list=default_retry_list)
 
     for i in range(args.iterations):
 
-         result = rc.set('main2-test01', '0123456789', re_met_trans_id="SET-01")
-         result = rc.get('main2-test', re_met_trans_id="GET-01")
+         result = rc.execute_command('ft.dropindex', 'idx:001', 'DD', re_met_trans_id="DELETE-IDX-01");
+         result = rc.execute_command(
+           'ft.create', 'idx:001', 'on', 'JSON', 'prefix', '1', 'user:001', 'schema', 'tag001', 'TAG', 'text001', 'TEXT', 'numeric001', 'NUMERIC', re_met_trans_id="CREATE-IDX-01")
+         result = rc.execute_command('json.set', 'user:001:001', "$", '{"tag001": "LEATHER", "text001": "Hello world", "numeric001": 7}', re_met_trans_id="INSERT-JSON-01");
+         result = rc.execute_command('ft.search', 'idx:001', '@tag001:{LEATHER}', re_met_trans_id="SEARCH-IDX-01");
 
     # Print out metrics
     rc.re_met_report_trans()

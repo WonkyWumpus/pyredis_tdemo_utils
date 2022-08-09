@@ -1,0 +1,13 @@
+# zset-and-hash.yaml
+redisConn:
+  host: 'redis-10000.tboyd1.demo-rlec.redislabs.com'
+  port: '10000'
+  password: 'expedia77demo'
+  clusterMode: 'false'
+idx:
+  keyPrefix: 'idx:'
+  keyStart: 1
+  numKeys: 10000
+  keyNameLength: 13
+runTimeSecs: 60
+opsPerSec: 50
